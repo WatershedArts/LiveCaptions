@@ -1,0 +1,35 @@
+<html>
+<head>
+<style>
+body {
+        margin:0;
+        padding:0;
+        background:#0f0;
+        height:720px;
+        overflow:hidden;
+}
+iframe {
+        width:1296px;
+        height:218px;
+        position:absolute;
+        left:0;
+        bottom:-18px;
+        overflow:hidden;
+}
+</style>
+</head>
+<body>
+<script type="text/javascript">
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+var event = getParameterByName('event');
+if (event) {
+        document.write('<iframe src="http://www.streamtext.net/player?event='+event+'&ff=Verdana,sans-serif&fs=50&fgc=ffffff&bgc=000000&spacing=1.2&header=false&controls=false&footer=false&chat=false" frameborder="0" scrolling="no"></iframe>');
+}
+</script>
+</body>
+</html>
